@@ -36,8 +36,8 @@ module.exports = async (req, res) => {
       // Send success response
       res.status(200).json({ message: 'Email added successfully!' });
     } catch (error) {
-      console.error('Error adding email to Google Sheets:', error);
-      res.status(500).json({ message: 'Failed to add email' });
+      console.error('Error adding email to Google Sheets:', error); // Log the error to see the detailed message
+      res.status(500).json({ message: 'Failed to add email', error: error.message }); // Send back the specific error message
     }
   } else {
     // Return 405 (Method Not Allowed) if the method is not POST
