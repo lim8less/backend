@@ -1,1 +1,15 @@
-
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/update-sheet.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/update-sheet",
+      "dest": "/api/update-sheet.js"
+    }
+  ]
+}
